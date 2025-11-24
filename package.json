@@ -7,7 +7,10 @@
     "test": "eslint lib",
     "browserify": "browserify ./lib/vcdrom.js > app/vcdrom.js",
     "build": "browserify ./lib/vcdrom.js | terser --compress -o app/vcdrom.js",
-    "watch": "watchify ./lib/vcdrom.js -o app/vcdrom.js -v"
+    "watch": "watchify ./lib/vcdrom.js -o app/vcdrom.js -v",
+    "dev:prepare": "bash dev.sh",
+    "dev:server": "http-server app -p 3000 -o",
+    "dev": "npm run dev:prepare && npm run browserify && npm run dev:server"
   },
   "files": [
     "app/*.html",
