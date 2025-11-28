@@ -5,7 +5,6 @@ mkdir -p app
 cp node_modules/vcd-stream/out/vcd.wasm app
 
 cp src/vcdrom.html app/index.html
-cp src/*.woff2 app
 cp src/theme.css app
 cp src/wave.svg app
 
