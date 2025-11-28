@@ -1,0 +1,297 @@
+/* VCDrom 主题系统 */
+
+/* 默认暗色主题变量 */
+:root {
+  /* 背景色 */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #2d2d30;
+  --bg-hover: #3e3e42;
+  
+  /* 文字颜色 */
+  --text-primary: #cccccc;
+  --text-secondary: #969696;
+  --text-disabled: #656565;
+  
+  /* 边框颜色 */
+  --border-color: #3e3e42;
+  --border-focus: #007acc;
+  
+  /* 强调色 */
+  --accent-primary: #007acc;
+  --accent-secondary: #0098ff;
+  
+  /* 波形相关颜色 */
+  --wave-bg: #1e1e1e;
+  --wave-grid: #3e3e42;
+  --wave-text: #cccccc;
+  --wave-signal: #4ec9b0;
+  
+  /* 按钮颜色 */
+  --btn-bg: #444444;
+  --btn-hover: #555555;
+  --btn-text: #ffffff;
+  --btn-border: #666666;
+  
+  /* 面板颜色 */
+  --panel-bg: #252526;
+  --panel-header: #2d2d30;
+  
+  /* 输入框 */
+  --input-bg: #3c3c3c;
+  --input-border: #3e3e42;
+  --input-text: #cccccc;
+  
+  /* 滚动条 */
+  --scrollbar-track: #1e1e1e;
+  --scrollbar-thumb: #424242;
+  --scrollbar-thumb-hover: #4e4e4e;
+}
+
+/* 亮色主题变量 */
+:root[data-theme="light"] {
+  /* 背景色 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f3f3;
+  --bg-tertiary: #e8e8e8;
+  --bg-hover: #e0e0e0;
+  
+  /* 文字颜色 */
+  --text-primary: #333333;
+  --text-secondary: #616161;
+  --text-disabled: #9e9e9e;
+  
+  /* 边框颜色 */
+  --border-color: #d0d0d0;
+  --border-focus: #0078d4;
+  
+  /* 强调色 */
+  --accent-primary: #0078d4;
+  --accent-secondary: #005a9e;
+  
+  /* 波形相关颜色 */
+  --wave-bg: #ffffff;
+  --wave-grid: #d0d0d0;
+  --wave-text: #333333;
+  --wave-signal: #008080;
+  
+  /* 按钮颜色 */
+  --btn-bg: #e0e0e0;
+  --btn-hover: #d0d0d0;
+  --btn-text: #333333;
+  --btn-border: #c0c0c0;
+  
+  /* 面板颜色 */
+  --panel-bg: #f3f3f3;
+  --panel-header: #e8e8e8;
+  
+  /* 输入框 */
+  --input-bg: #ffffff;
+  --input-border: #d0d0d0;
+  --input-text: #333333;
+  
+  /* 滚动条 */
+  --scrollbar-track: #f3f3f3;
+  --scrollbar-thumb: #c0c0c0;
+  --scrollbar-thumb-hover: #a0a0a0;
+}
+
+/* 应用主题颜色到各个元素 */
+body {
+  /* 暗色主题下使用深色背景 */
+  background-color: #1e1e1e;
+  color: #cccccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 亮色主题下的body样式 */
+:root[data-theme="light"] body {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* 面板样式 - 不覆盖 doppler-container，避免影响 drop zone */
+/* .doppler-container 使用默认样式，不强制覆盖 */
+
+/* 右侧面板 */
+.doppler-right-panel,
+[class*="rightPanel"] {
+  background-color: var(--panel-bg) !important;
+  color: var(--text-primary) !important;
+  border-left: 1px solid var(--border-color) !important;
+}
+
+/* 文本 */
+.doppler-right-panel div,
+.doppler-right-panel p,
+.doppler-right-panel span {
+  color: var(--text-primary) !important;
+}
+
+/* 标题 */
+.doppler-right-panel h1,
+.doppler-right-panel h2,
+.doppler-right-panel h3 {
+  color: var(--text-primary) !important;
+}
+
+/* 链接 */
+.doppler-right-panel a {
+  color: var(--accent-primary) !important;
+}
+
+.doppler-right-panel a:hover {
+  color: var(--accent-secondary) !important;
+}
+
+/* 按钮通用样式 */
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* 主题切换按钮特殊样式 */
+#theme-toggle-btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+#theme-toggle-btn:hover {
+  background-color: var(--btn-hover);
+  border-color: var(--accent-primary);
+}
+
+#theme-toggle-btn:active {
+  transform: scale(0.98);
+}
+
+/* 输入框 */
+input,
+textarea,
+.cm-editor {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: var(--input-border) !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* SVG 元素颜色适配 - 移除，让波形图使用自己的颜色系统 */
+/* 不要强制覆盖所有 SVG 元素的颜色，这会导致波形图消失 */
+
+/* CodeMirror 编辑器适配 */
+.cm-editor .cm-gutters {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+
+.cm-editor .cm-activeLineGutter {
+  background-color: var(--bg-hover) !important;
+}
+
+.cm-editor .cm-activeLine {
+  background-color: var(--bg-hover) !important;
+}
+
+.cm-editor .cm-selectionBackground {
+  background-color: var(--accent-primary) !important;
+  opacity: 0.3;
+}
+
+/* 菜单按钮 */
+.doppler-menu {
+  background-color: var(--btn-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.doppler-menu:hover {
+  background-color: var(--btn-hover) !important;
+}
+
+/* 波形视图 - 仅在有具体类名时应用 */
+.doppler-view:not(#drop-zone):not(.wd-progress) {
+  background-color: var(--wave-bg) !important;
+}
+
+/* 光标 */
+.doppler-cursor {
+  background-color: var(--accent-primary) !important;
+}
+
+/* 选择区域 */
+.doppler-selection {
+  background-color: var(--accent-primary) !important;
+  opacity: 0.2;
+}
+
+/* drop zone 样式 - 极简方案，最小化干预 */
+
+/* 仅在亮色模式下调整文本颜色和背景 */
+:root[data-theme="light"] .wd-progress {
+  background-color: #f5f5f5;
+}
+
+:root[data-theme="light"] #drop-zone text {
+  fill: #333333 !important;
+}
+
+:root[data-theme="light"] #drop-zone path {
+  stroke: hsla(140, 100%, 35%, 0.4) !important;
+}
+
+/* waveform 容器样式 - 仅在加载VCD文件后应用，不影响drop zone */
+#waveform1 > div:not(#drop-zone):not(.wd-progress) {
+  background-color: var(--bg-primary);
+}
+
+/* 平滑过渡效果 - 仅应用于UI元素，完全排除SVG和drop zone */
+body,
+button:not(#drop-zone button):not(.wd-progress button),
+input:not(#inputfile),
+textarea,
+.cm-editor,
+.doppler-right-panel,
+.doppler-menu {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* 确保 SVG、canvas 和 drop zone 完全不受过渡效果影响 */
+svg,
+svg *,
+canvas,
+#drop-zone,
+#drop-zone *,
+.wd-progress,
+.wd-progress * {
+  transition: none !important;
+}
